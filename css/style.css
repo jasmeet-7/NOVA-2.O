@@ -98,3 +98,51 @@ h2{
     }
 
 }
+
+/* ==========================
+   BOOT SCREEN
+========================== */
+
+.boot-screen{
+    width:100%;
+    max-width:700px;
+    margin:auto;
+    padding:40px 25px;
+    text-align:center;
+}
+
+.boot-logo{
+    font-family:'Orbitron',sans-serif;
+    font-size:64px;
+    color:#67e8f9;
+    margin-bottom:30px;
+    letter-spacing:6px;
+}
+
+#bootText{
+    font-size:20px;
+    color:#ffffff;
+    margin-bottom:30px;
+}
+
+.progress-bar{
+    width:100%;
+    height:14px;
+    background:rgba(255,255,255,.1);
+    border-radius:30px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.15);
+}
+
+#progressFill{
+    width:0%;
+    height:100%;
+    background:linear-gradient(90deg,#06b6d4,#2563eb);
+    transition:width .4s ease;
+}
+
+#progressPercent{
+    margin-top:18px;
+    font-size:18px;
+    color:#67e8f9;
+}
