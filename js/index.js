@@ -1,7 +1,11 @@
-alert("NOVA JS Loaded");
+window.addEventListener("DOMContentLoaded", () => {
 
-const wakeButton = document.getElementById("wakeButton");
+    alert("NOVA JS Loaded");
 
-wakeButton.addEventListener("click", () => {
-    alert("Button Clicked");
+    const wakeButton = document.getElementById("wakeButton");
+
+    wakeButton.addEventListener("click", () => {
+        alert("Button Clicked");
+    });
+
 });
