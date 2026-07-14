@@ -12,41 +12,81 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
 <div class="background"></div>
 
-<div class="console-card">
+<main class="console-container">
 
-    <p class="version">NOVA AI CONSOLE</p>
+    <section class="console-card">
 
-    <h1>NOVA</h1>
+        <div class="console-header">
 
-    <h2 id="welcomeUser">
-        Welcome back...
-    </h2>
+            <div>
+                <p class="version">NOVA AI CORE</p>
+                <h1>NOVA</h1>
+            </div>
 
-    <div class="status-online">
-        <span class="status-dot"></span>
-        SYSTEM ONLINE
-    </div>
+            <div class="online-status">
+                <span class="status-dot"></span>
+                ONLINE
+            </div>
 
-    <input
-        type="text"
-        id="commandInput"
-        placeholder="Type a command..."
-    >
+        </div>
 
-    <div class="console-buttons">
 
-        <button id="sendButton">
-            SEND
-        </button>
+        <h2 id="welcomeUser">
+            Welcome back...
+        </h2>
 
-        <button id="voiceButton">
-            MIC
-        </button>
 
-    </div>
+        <div class="chat-box" id="chatBox">
 
-    <div class="activity-box
+            <div class="message nova-message">
+                Hello, I am NOVA. System ready.
+            </div>
+
+        </div>
+
+
+        <div class="command-area">
+
+            <input 
+                type="text"
+                id="commandInput"
+                placeholder="Ask NOVA anything..."
+            >
+
+            <button id="voiceButton">
+                🎙
+            </button>
+
+            <button id="sendButton">
+                SEND
+            </button>
+
+        </div>
+
+
+        <div class="activity-box">
+
+            <h3>System Activity</h3>
+
+            <ul id="activityList">
+                <li>Core initialized</li>
+                <li>Memory loaded</li>
+                <li>Awaiting command</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="js/console.js"></script>
+
+</body>
+</html>
