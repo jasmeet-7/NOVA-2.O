@@ -278,6 +278,16 @@ h2{
 .console-buttons{
     display:flex;
     gap:15px;
+    margin-top:10px;
+}
+
+#sendButton{
+    flex:4;
+}
+
+#voicebutton{
+    flex:1;
+    min-width:70px;
 }
 
 .console-buttons button{
@@ -307,4 +317,32 @@ h2{
 
 .activity-box li{
     margin:10px 0;
+}
+
+#sendButton,
+#voiceButton{
+
+    height:55px;
+
+    border:none;
+    border-radius:14px;
+
+    cursor:pointer;
+
+    font-size:18px;
+    font-weight:600;
+
+    color:white;
+
+    background:linear-gradient(135deg,#06b6d4,#2563eb);
+
+    transition:.3s;
+}
+
+#sendButton:hover,
+#voiceButton:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 0 20px #38bdf8;
 }
