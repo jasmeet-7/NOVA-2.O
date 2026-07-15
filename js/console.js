@@ -17,7 +17,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
     if (!SpeechRecognition) {
         novaStatus.textContent = "Voice recognition is not supported.";
-        voiceButton.disabled = true;
         return;
     }
 
@@ -29,12 +28,23 @@ window.addEventListener("DOMContentLoaded", () => {
 
     voiceButton.addEventListener("click", () => {
 
+        novaStatus.textContent = "Starting microphone...";
+        voiceButton.textContent = "STARTING";
+
+        try {
+            recognition.start();
+        } catch (error) {
+            novaStatus.textContent = "Microphone is already active.";
+        }
+
+    });
+
+    recognition.onstart = () => {
+
         novaStatus.textContent = "Listening...";
         voiceButton.textContent = "LISTENING";
 
-        recognition.start();
-
-    });
+    };
 
     recognition.onresult = (event) => {
 
@@ -43,14 +53,13 @@ window.addEventListener("DOMContentLoaded", () => {
         lastCommand.textContent = command;
 
         novaStatus.textContent = "Command received.";
-
         voiceButton.textContent = "ACTIVATE";
 
     };
 
-    recognition.onerror = () => {
+    recognition.onerror = (event) => {
 
-        novaStatus.textContent = "I couldn't hear you.";
+        novaStatus.textContent = `Voice error: ${event.error}`;
 
         voiceButton.textContent = "ACTIVATE";
 
