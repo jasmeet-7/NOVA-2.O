@@ -73,3 +73,12 @@ function updateDate() {
 updateDate();
 
 setInterval(updateDate, 1000);
+
+const systemButton = document.getElementById("systemButton");
+const systemPanel = document.getElementById("systemPanel");
+
+systemButton.addEventListener("click", () => {
+
+    systemPanel.classList.toggle("show");
+
+});
