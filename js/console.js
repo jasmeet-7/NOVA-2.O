@@ -1,74 +1,148 @@
-window.addEventListener("DOMContentLoaded", () => {
+/* ==========================
+   NOVA VOICE INTERFACE
+========================== */
 
-    const welcomeUser = document.getElementById("welcomeUser");
-    const voiceButton = document.getElementById("voiceButton");
-    const novaStatus = document.getElementById("novaStatus");
-    const lastCommand = document.getElementById("lastCommand");
+.nova-interface{
+    width:100%;
+    min-height:100vh;
 
-    const userName = localStorage.getItem("novaUserName");
+    display:flex;
+    flex-direction:column;
 
-    if (userName) {
-        welcomeUser.textContent = `Welcome back, ${userName}`;
-    }
+    align-items:center;
 
-    const SpeechRecognition =
-        window.SpeechRecognition ||
-        window.webkitSpeechRecognition;
+    padding:30px 20px;
+}
 
-    if (!SpeechRecognition) {
-        novaStatus.textContent = "Voice recognition is not supported.";
-        return;
-    }
+.nova-header{
+    width:100%;
+    max-width:1000px;
 
-    const recognition = new SpeechRecognition();
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
-    recognition.lang = "en-IN";
-    recognition.continuous = false;
-    recognition.interimResults = false;
+.nova-brand{
+    font-family:'Orbitron',sans-serif;
+    font-size:24px;
+    letter-spacing:4px;
 
-    voiceButton.addEventListener("click", () => {
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
 
-        novaStatus.textContent = "Starting microphone...";
-        voiceButton.textContent = "STARTING";
+.brand-line{
+    width:8px;
+    height:8px;
 
-        try {
-            recognition.start();
-        } catch (error) {
-            novaStatus.textContent = "Microphone is already active.";
-        }
+    background:#67e8f9;
+    border-radius:50%;
 
-    });
+    box-shadow:0 0 15px #67e8f9;
+}
 
-    recognition.onstart = () => {
+.system-status{
+    display:flex;
+    align-items:center;
+    gap:8px;
 
-        novaStatus.textContent = "Listening...";
-        voiceButton.textContent = "LISTENING";
+    color:#67e8f9;
+    font-size:13px;
+    letter-spacing:1px;
+}
 
-    };
+.nova-core{
+    width:100%;
+    max-width:700px;
 
-    recognition.onresult = (event) => {
+    margin:auto;
 
-        const command = event.results[0][0].transcript;
+    text-align:center;
+}
 
-        lastCommand.textContent = command;
+.nova-core h1{
+    font-family:'Orbitron',sans-serif;
+    font-size:72px;
+    color:#67e8f9;
+    letter-spacing:8px;
+}
 
-        novaStatus.textContent = "Command received.";
-        voiceButton.textContent = "ACTIVATE";
+.nova-core h2{
+    margin-top:15px;
+}
 
-    };
+#novaStatus{
+    margin:25px 0;
+    color:#d1d5db;
+}
 
-    recognition.onerror = (event) => {
+#voiceButton{
+    width:100px !important;
+    height:100px !important;
 
-        novaStatus.textContent = `Voice error: ${event.error}`;
+    border:none;
+    border-radius:50%;
 
-        voiceButton.textContent = "ACTIVATE";
+    cursor:pointer;
 
-    };
+    color:white;
+    font-size:14px;
+    font-weight:600;
 
-    recognition.onend = () => {
+    background:linear-gradient(135deg,#06b6d4,#2563eb);
 
-        voiceButton.textContent = "ACTIVATE";
+    box-shadow:0 0 30px rgba(56,189,248,.4);
 
-    };
+    transition:.3s;
+}
 
-});
+#voiceButton:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 50px #38bdf8;
+}
+
+.voice-hint{
+    margin-top:20px;
+    color:#9ca3af;
+}
+
+.command-display{
+    width:100%;
+    max-width:700px;
+
+    padding:20px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:16px;
+}
+
+.display-label{
+    font-size:12px;
+    letter-spacing:2px;
+    color:#67e8f9;
+}
+
+#lastCommand{
+    margin-top:10px;
+    color:#d1d5db;
+}
+
+.nova-footer{
+    width:100%;
+    max-width:1000px;
+
+    display:flex;
+    justify-content:space-between;
+
+    margin-top:30px;
+
+    font-size:11px;
+    letter-spacing:2px;
+    color:#6b7280;
+}
