@@ -1,63 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+window.addEventListener("DOMContentLoaded", () => {
 
-    <title>NOVA OS | Console</title>
+    const welcomeUser = document.getElementById("welcomeUser");
+    const voiceButton = document.getElementById("voiceButton");
+    const novaStatus = document.getElementById("novaStatus");
+    const lastCommand = document.getElementById("lastCommand");
 
-    <link rel="stylesheet" href="css/style.css">
+    const userName = localStorage.getItem("novaUserName");
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    if (userName) {
+        welcomeUser.textContent = `Welcome back, ${userName}`;
+    }
 
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-</head>
+    const SpeechRecognition =
+        window.SpeechRecognition ||
+        window.webkitSpeechRecognition;
 
-<body>
+    if (!SpeechRecognition) {
+        novaStatus.textContent = "Voice recognition is not supported.";
+        voiceButton.disabled = true;
+        return;
+    }
 
-<div class="background"></div>
+    const recognition = new SpeechRecognition();
 
-<main class="voice-console">
+    recognition.lang = "en-IN";
+    recognition.continuous = false;
+    recognition.interimResults = false;
 
-    <p class="version">NOVA AI CORE</p>
+    voiceButton.addEventListener("click", () => {
 
-    <h1>NOVA</h1>
+        novaStatus.textContent = "Listening...";
+        voiceButton.textContent = "LISTENING";
 
-    <h2 id="welcomeUser">
-        Welcome back...
-    </h2>
+        recognition.start();
 
-    <div class="online-status">
-        <span class="status-dot"></span>
-        SYSTEM ONLINE
-    </div>
+    });
 
-    <p id="novaStatus">
-        Ready when you are.
-    </p>
+    recognition.onresult = (event) => {
 
-    <button id="voiceButton">
-        ACTIVATE
-    </button>
+        const command = event.results[0][0].transcript;
 
-    <p class="voice-hint">
-        Press to speak with NOVA
-    </p>
+        lastCommand.textContent = command;
 
-    <div class="activity-box">
+        novaStatus.textContent = "Command received.";
 
-        <h3>Last Command</h3>
+        voiceButton.textContent = "ACTIVATE";
 
-        <p id="lastCommand">
-            No command yet.
-        </p>
+    };
 
-    </div>
+    recognition.onerror = () => {
 
-</main>
+        novaStatus.textContent = "I couldn't hear you.";
 
-<script src="js/console.js"></script>
+        voiceButton.textContent = "ACTIVATE";
 
-</body>
-</html>
+    };
+
+    recognition.onend = () => {
+
+        voiceButton.textContent = "ACTIVATE";
+
+    };
+
+});
