@@ -1,107 +1,63 @@
-window.addEventListener("DOMContentLoaded", () => {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    const welcomeUser = document.getElementById("welcomeUser");
-    const commandInput = document.getElementById("commandInput");
-    const sendButton = document.getElementById("sendButton");
-    const chatBox = document.getElementById("chatBox");
-    const activityList = document.getElementById("activityList");
+    <title>NOVA OS | Console</title>
 
-    const userName = localStorage.getItem("novaUserName");
+    <link rel="stylesheet" href="css/style.css">
 
-    if (userName) {
-        welcomeUser.textContent = `Welcome back, ${userName}`;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    function addMessage(text, type) {
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
 
-        const message = document.createElement("div");
+<body>
 
-        message.classList.add("message");
+<div class="background"></div>
 
-        if (type === "user") {
-            message.classList.add("user-message");
-        } else {
-            message.classList.add("nova-message");
-        }
+<main class="voice-console">
 
-        message.textContent = text;
+    <p class="version">NOVA AI CORE</p>
 
-        chatBox.appendChild(message);
+    <h1>NOVA</h1>
 
-        chatBox.scrollTop = chatBox.scrollHeight;
-    }
+    <h2 id="welcomeUser">
+        Welcome back...
+    </h2>
 
-    function addActivity(text) {
+    <div class="online-status">
+        <span class="status-dot"></span>
+        SYSTEM ONLINE
+    </div>
 
-        const activity = document.createElement("li");
+    <p id="novaStatus">
+        Ready when you are.
+    </p>
 
-        activity.textContent = text;
+    <button id="voiceButton">
+        ACTIVATE
+    </button>
 
-        activityList.appendChild(activity);
+    <p class="voice-hint">
+        Press to speak with NOVA
+    </p>
 
-    }
+    <div class="activity-box">
 
-    function novaReply(command) {
+        <h3>Last Command</h3>
 
-        const text = command.toLowerCase();
+        <p id="lastCommand">
+            No command yet.
+        </p>
 
-        if (text.includes("hello") || text.includes("hi")) {
-            return "Hello. I am NOVA. How can I assist you?";
-        }
+    </div>
 
-        if (text.includes("who are you")) {
-            return "I am NOVA, your personal AI Operating System.";
-        }
+</main>
 
-        if (text.includes("time")) {
-            return `The current time is ${new Date().toLocaleTimeString()}.`;
-        }
+<script src="js/console.js"></script>
 
-        if (text.includes("date")) {
-            return `Today's date is ${new Date().toLocaleDateString()}.`;
-        }
-
-        if (text.includes("help")) {
-            return "Try asking me about the time, date, or ask who I am.";
-        }
-
-        return "I am still learning. My core intelligence is currently being upgraded.";
-    }
-
-    function sendCommand() {
-
-        const command = commandInput.value.trim();
-
-        if (command === "") {
-            return;
-        }
-
-        addMessage(command, "user");
-
-        addActivity(`Command received: ${command}`);
-
-        commandInput.value = "";
-
-        setTimeout(() => {
-
-            const response = novaReply(command);
-
-            addMessage(response, "nova");
-
-            addActivity("NOVA responded");
-
-        }, 500);
-
-    }
-
-    sendButton.addEventListener("click", sendCommand);
-
-    commandInput.addEventListener("keydown", (event) => {
-
-        if (event.key === "Enter") {
-            sendCommand();
-        }
-
-    });
-
-});
+</body>
+</html>
