@@ -366,8 +366,8 @@ h2{
 }
 
 #voiceButton{
-    width:85px;
-    height:55px;
+    width:100px;
+    height:100px;
     flex-shrink:0;
 
     border:none;
