@@ -656,3 +656,173 @@ h2{
     letter-spacing:2px;
     color:#6b7280;
 }
+
+
+
+/* ==========================
+   NOVA OS DASHBOARD
+========================== */
+
+.nova-dashboard{
+    width:100%;
+    min-height:100vh;
+
+    padding:30px 40px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.dashboard-header{
+    width:100%;
+    max-width:1100px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.nova-brand{
+    font-family:'Orbitron', sans-serif;
+    font-size:24px;
+    letter-spacing:3px;
+}
+
+.system-status{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    color:#67e8f9;
+    font-size:13px;
+}
+
+.dashboard-welcome{
+    width:100%;
+    max-width:1100px;
+
+    margin:80px auto 40px;
+}
+
+.dashboard-welcome h1{
+    font-family:'Orbitron', sans-serif;
+    font-size:42px;
+    margin-top:10px;
+}
+
+#currentDate{
+    margin-top:10px;
+    color:#9ca3af;
+}
+
+.dashboard-grid{
+    width:100%;
+    max-width:1100px;
+
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+
+    gap:20px;
+}
+
+.system-card{
+    padding:25px;
+
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:18px;
+}
+
+.card-label{
+    font-size:12px;
+    letter-spacing:2px;
+    color:#67e8f9;
+}
+
+.system-card h2{
+    margin-top:20px;
+    font-family:'Orbitron', sans-serif;
+}
+
+.system-card p{
+    margin-top:8px;
+    color:#9ca3af;
+}
+
+.apps-section{
+    width:100%;
+    max-width:1100px;
+
+    margin-top:45px;
+}
+
+.apps-section h2{
+    font-family:'Orbitron', sans-serif;
+    font-size:18px;
+    letter-spacing:2px;
+}
+
+.apps-grid{
+    display:flex;
+    gap:15px;
+
+    margin-top:20px;
+}
+
+.app-button{
+    padding:18px 30px;
+
+    border:1px solid rgba(103,232,249,.3);
+    border-radius:12px;
+
+    background:rgba(255,255,255,.06);
+
+    color:white;
+
+    cursor:pointer;
+}
+
+.dashboard-footer{
+    width:100%;
+    max-width:1100px;
+
+    display:flex;
+    justify-content:space-between;
+
+    margin-top:auto;
+    padding-top:40px;
+
+    color:#6b7280;
+    font-size:11px;
+    letter-spacing:2px;
+}
+
+@media(max-width:700px){
+
+    .nova-dashboard{
+        padding:25px 20px;
+    }
+
+    .dashboard-welcome{
+        margin-top:55px;
+    }
+
+    .dashboard-welcome h1{
+        font-size:30px;
+    }
+
+    .dashboard-grid{
+        grid-template-columns:1fr;
+    }
+
+    .apps-grid{
+        flex-direction:column;
+    }
+
+    .app-button{
+        width:100%;
+    }
+
+}
