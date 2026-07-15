@@ -479,3 +479,30 @@ h2{
     margin-top:40px;
     text-align:left;
 }
+
+.voice-console #voiceButton{
+    width:110px !important;
+    height:110px !important;
+
+    min-width:110px !important;
+
+    border:none;
+    border-radius:50%;
+
+    cursor:pointer;
+
+    color:white;
+    font-size:14px;
+    font-weight:600;
+
+    background:linear-gradient(135deg,#06b6d4,#2563eb);
+
+    box-shadow:0 0 30px rgba(56,189,248,.4);
+
+    transition:.3s;
+}
+
+.voice-console #voiceButton:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 50px #38bdf8;
+}
