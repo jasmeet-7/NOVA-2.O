@@ -346,3 +346,61 @@ h2{
 
     box-shadow:0 0 20px #38bdf8;
 }
+
+
+/* ==========================
+   COMMAND AREA
+========================== */
+
+.command-area{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    margin-top:25px;
+}
+
+#commandInput{
+    flex:1;
+    height:55px;
+    margin:0;
+}
+
+#voiceButton{
+    width:85px;
+    height:55px;
+    flex-shrink:0;
+
+    border:none;
+    border-radius:14px;
+
+    background:linear-gradient(135deg,#06b6d4,#2563eb);
+
+    color:white;
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+}
+
+#sendButton{
+    width:130px;
+    height:55px;
+    flex-shrink:0;
+
+    border:none;
+    border-radius:14px;
+
+    background:linear-gradient(135deg,#06b6d4,#2563eb);
+
+    color:white;
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+}
+
+#voiceButton:hover,
+#sendButton:hover{
+    transform:translateY(-2px);
+    box-shadow:0 0 20px #38bdf8;
+}
