@@ -1,86 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>NOVA OS | Console</title>
+<title>NOVA OS | Dashboard</title>
 
-    <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-</head>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<body>
+</head><body><div class="background"></div><main class="nova-dashboard"><header class="dashboard-header">
 
-<div class="background"></div>
+    <div class="nova-brand">
+        NOVA OS
+    </div>
 
-<main class="nova-interface">
+    <div class="system-status">
+        <span class="status-dot"></span>
+        SYSTEM ONLINE
+    </div>
 
-    <header class="nova-header">
+</header>
 
-        <div class="nova-brand">
-            <span class="brand-line"></span>
-            <span>NOVA</span>
-        </div>
 
-        <div class="system-status">
-            <span class="status-dot"></span>
-            ONLINE
-        </div>
+<section class="dashboard-welcome">
 
-    </header>
+    <p class="version">PERSONAL OPERATING SYSTEM</p>
 
-    <section class="nova-core">
+    <h1 id="welcomeUser">
+        Welcome back...
+    </h1>
 
-        <p class="version">NOVA AI CORE</p>
+    <p id="currentDate">
+        Loading date...
+    </p>
 
-        <h1>NOVA</h1>
+</section>
 
-        <h2 id="welcomeUser">
-            Welcome back...
-        </h2>
 
-        <p id="novaStatus">
-            Ready when you are.
-        </p>
+<section class="dashboard-grid">
 
-        <button id="voiceButton">
-            ACTIVATE
-        </button>
+    <div class="system-card">
 
-        <p class="voice-hint">
-            Press to speak with NOVA
-        </p>
-
-    </section>
-
-    <section class="command-display">
-
-        <span class="display-label">
-            LAST COMMAND
+        <span class="card-label">
+            SYSTEM STATUS
         </span>
 
-        <p id="lastCommand">
-            No command yet.
-        </p>
+        <h2>ONLINE</h2>
 
-    </section>
+        <p>All core systems operational</p>
 
-    <footer class="nova-footer">
+    </div>
 
-        <span>NOVA OS</span>
 
-        <span>AI CORE ACTIVE</span>
+    <div class="system-card">
 
-    </footer>
+        <span class="card-label">
+            VOICE CONTROL
+        </span>
 
-</main>
+        <h2>READY</h2>
 
-<script src="js/console.js"></script>
+        <p>Voice input available</p>
 
-</body>
-</html>
+    </div>
+
+
+    <div class="system-card">
+
+        <span class="card-label">
+            NOVA CORE
+        </span>
+
+        <h2>v0.1</h2>
+
+        <p>Operating system interface</p>
+
+    </div>
+
+</section>
+
+
+<section class="apps-section">
+
+    <h2>QUICK ACCESS</h2>
+
+    <div class="apps-grid">
+
+        <button class="app-button">
+            SYSTEM
+        </button>
+
+        <button class="app-button">
+            VOICE
+        </button>
+
+        <button class="app-button">
+            SETTINGS
+        </button>
+
+    </div>
+
+</section>
+
+
+<footer class="dashboard-footer">
+
+    <span>NOVA OS</span>
+
+    <span>FLOWPILOTT</span>
+
+</footer>
+
+</main><script src="js/console.js"></script></body></html>
