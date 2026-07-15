@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>NOVA OS | Console</title>
 
     <link rel="stylesheet" href="css/style.css">
@@ -17,73 +18,67 @@
 
 <div class="background"></div>
 
-<main class="console-container">
+<main class="nova-interface">
 
-    <section class="console-card">
+    <header class="nova-header">
 
-        <div class="console-header">
-
-            <div>
-                <p class="version">NOVA AI CORE</p>
-                <h1>NOVA</h1>
-            </div>
-
-            <div class="online-status">
-                <span class="status-dot"></span>
-                ONLINE
-            </div>
-
+        <div class="nova-brand">
+            <span class="brand-line"></span>
+            <span>NOVA</span>
         </div>
 
+        <div class="system-status">
+            <span class="status-dot"></span>
+            ONLINE
+        </div>
+
+    </header>
+
+    <section class="nova-core">
+
+        <p class="version">NOVA AI CORE</p>
+
+        <h1>NOVA</h1>
 
         <h2 id="welcomeUser">
             Welcome back...
         </h2>
 
+        <p id="novaStatus">
+            Ready when you are.
+        </p>
 
-        <div class="chat-box" id="chatBox">
+        <button id="voiceButton">
+            ACTIVATE
+        </button>
 
-            <div class="message nova-message">
-                Hello, I am NOVA. System ready.
-            </div>
-
-        </div>
-
-
-    <div class="command-area">
-
-    <input 
-        type="text"
-        id="commandInput"
-        placeholder="Ask NOVA anything..."
-    >
-
-    <button id="voiceButton">
-        MIC
-    </button>
-
-    <button id="sendButton">
-        SEND
-    </button>
-
-</div>
-
-        <div class="activity-box">
-
-            <h3>System Activity</h3>
-
-            <ul id="activityList">
-                <li>Core initialized</li>
-                <li>Memory loaded</li>
-                <li>Awaiting command</li>
-            </ul>
-
-        </div>
+        <p class="voice-hint">
+            Press to speak with NOVA
+        </p>
 
     </section>
 
-</main>
+    <section class="command-display">
 
+        <span class="display-label">
+            LAST COMMAND
+        </span>
+
+        <p id="lastCommand">
+            No command yet.
+        </p>
+
+    </section>
+
+    <footer class="nova-footer">
+
+        <span>NOVA OS</span>
+
+        <span>AI CORE ACTIVE</span>
+
+    </footer>
+
+</main>
 
 <script src="js/console.js"></script>
 
