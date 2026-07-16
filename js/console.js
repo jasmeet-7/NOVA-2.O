@@ -1,3 +1,11 @@
+const welcomeUser = document.getElementById("welcomeUser");
+
+const userName = localStorage.getItem("novaUserName");
+
+if (userName) {
+    welcomeUser.textContent = `Welcome back, ${userName}`;
+}
+
 window.addEventListener("DOMContentLoaded", () => {
 
     const currentDate = document.getElementById("currentDate");
