@@ -935,3 +935,25 @@ h2{
 
     color:#9ca3af;
 }
+
+
+
+
+/* ==========================
+   NOVA SYSTEM PAGE
+========================== */
+
+.settings-content h1{
+    color:#67e8f9;
+}
+
+.settings-card{
+    transition:transform .3s ease,
+               border-color .3s ease;
+}
+
+.settings-card:hover{
+    transform:translateY(-4px);
+
+    border-color:rgba(103,232,249,.4);
+}
