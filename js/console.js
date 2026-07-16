@@ -1,14 +1,14 @@
-const welcomeUser = document.getElementById("welcomeUser");
-
-const userName = localStorage.getItem("novaUserName");
-
-if (userName) {
-    welcomeUser.textContent = `Welcome back, ${userName}`;
-}
-
 window.addEventListener("DOMContentLoaded", () => {
 
+    const welcomeUser = document.getElementById("welcomeUser");
     const currentDate = document.getElementById("currentDate");
+
+    const userName = localStorage.getItem("novaUserName");
+
+    if (userName) {
+        welcomeUser.textContent = `Welcome back, ${userName}`;
+    }
+
 
     function updateDate() {
 
@@ -34,15 +34,5 @@ window.addEventListener("DOMContentLoaded", () => {
     updateDate();
 
     setInterval(updateDate, 1000);
-
-
-    const systemButton = document.getElementById("systemButton");
-    const systemPanel = document.getElementById("systemPanel");
-
-    systemButton.addEventListener("click", () => {
-
-        systemPanel.classList.toggle("show");
-
-    });
 
 });
