@@ -957,3 +957,47 @@ h2{
 
     border-color:rgba(103,232,249,.4);
 }
+
+
+
+/* MOBILE SYSTEM PAGE FIX */
+
+* {
+    box-sizing: border-box;
+}
+
+.settings-page {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.settings-content {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.settings-card {
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+@media (max-width: 700px) {
+
+    .settings-page {
+        padding: 25px 20px;
+    }
+
+    .settings-content {
+        margin-top: 50px;
+    }
+
+    .settings-content h1 {
+        font-size: 36px;
+    }
+
+    .settings-card {
+        padding: 20px;
+    }
+
+}
